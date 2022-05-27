@@ -13,7 +13,10 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'ls'
+    script: 'git submodule update --init --recursive'
+- task: CmdLine@2
+  inputs:
+    script: 'mkdir build && cd build'
 - task: CMake@1
   inputs:
-    cmakeArgs: 
+    cmakeArgs: -S ..
