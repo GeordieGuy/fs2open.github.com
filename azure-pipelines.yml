@@ -20,3 +20,7 @@ steps:
 - task: CMake@1
   inputs:
     cmakeArgs: -S ..
+
+- task: CmdLine@2
+  inputs:
+    script: 'sudo make -j 4 -v'
